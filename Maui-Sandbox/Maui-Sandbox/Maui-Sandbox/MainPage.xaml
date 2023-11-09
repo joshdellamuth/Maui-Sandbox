@@ -7,17 +7,11 @@
              xmlns:viewmodel="clr-namespace:Maui_Sandbox.ViewModel"
              x:DataType="viewmodel:MainPageViewModel">
 
-    <StackLayout>
-        <TableView Intent="Data">
-            <TableRoot>
-                <TableSection Title="Basic Information">
-                    <TextCell Text="Task Id" Detail="{Binding TaskId}"/>
-                    <TextCell Text="Task Name" Detail="{Binding TaskName}"/>
-                    <TextCell Text="Task Status" Detail="{Binding TaskStatus}"/>
-                    <SwitchCell Text="Is Active" On="{Binding IsActive}"/>
-                </TableSection>
-            </TableRoot>
-        </TableView>
-    </StackLayout>
+    <VerticalStackLayout VerticalOptions="End">
+        <Label Text="Tasks" HorizontalOptions="Center" TextColor="Red" Margin="10"/>
+        <Button x:Name="TaskButton1" Text="Task 1" Margin="10" Clicked="TaskButton1_Clicked"/>
+        <Button x:Name="TaskButton2" Text="Task 2" Margin="10" Clicked="TaskButton2_Clicked"/>
+        <Button x:Name="TaskButton3" Text="Task 3" Margin="10" Clicked="TaskButton2_Clicked"/>
+    </VerticalStackLayout>
 
 </ContentPage>
