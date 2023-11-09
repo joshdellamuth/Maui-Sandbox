@@ -1,10 +1,23 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
-<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+<!--added the namespace below clr-namespace:Maui_Sandbox.ViewModel-->
+<!--Also had to associate this page with the viewmodel (DataType)-->
+    <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="Maui_Sandbox.MainPage">
+             x:Class="Maui_Sandbox.MainPage"
+             xmlns:viewmodel="clr-namespace:Maui_Sandbox.ViewModel"
+             x:DataType="viewmodel:MainPageViewModel">
 
-    <ScrollView>
-        
-    </ScrollView>
+    <StackLayout>
+        <TableView Intent="Data">
+            <TableRoot>
+                <TableSection Title="Basic Information">
+                    <TextCell Text="Task Id" Detail="{Binding TaskId}"/>
+                    <TextCell Text="Task Name" Detail="{Binding TaskName}"/>
+                    <TextCell Text="Task Status" Detail="{Binding TaskStatus}"/>
+                    <SwitchCell Text="Is Active" On="{Binding IsActive}"/>
+                </TableSection>
+            </TableRoot>
+        </TableView>
+    </StackLayout>
 
 </ContentPage>
