@@ -5,7 +5,17 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:local="clr-namespace:Maui_Sandbox"
     Shell.FlyoutBehavior="Disabled">
-
+    <!--In this page, you can add templates based on what page you are on. Example shown below:
+    <TabBar>
+        <Tab Title="Home" Icon="home.png">
+            <ShellContent Route="HomePage"
+                          ContentTemplate="{DataTemplate local:HomePage}" />
+        </Tab>
+        <Tab Title="Settings" Icon="settings.png">
+            <ShellContent Route="SettingsPage"
+                          ContentTemplate="{DataTemplate local:SettingsPage}" />
+        </Tab>
+    </TabBar>-->
     <ShellContent
         Title="Home"
         ContentTemplate="{DataTemplate local:MainPage}"
