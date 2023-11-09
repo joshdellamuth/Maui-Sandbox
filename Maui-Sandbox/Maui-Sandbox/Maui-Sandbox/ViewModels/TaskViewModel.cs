@@ -1,6 +1,8 @@
 ﻿using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
 using System.ComponentModel;
+using System.Runtime.CompilerServices;
+using Maui_Sandbox.Models;
 
 namespace Maui_Sandbox.ViewModel;
 
@@ -9,12 +11,14 @@ namespace Maui_Sandbox.ViewModel;
 //implementing the interface just means to include what is in the interface
 //in this case, we implement INotifyPropertyChanged with the public event 
 //line
-public partial class MainPageViewModel : INotifyPropertyChanged
-{
-    public string TaskId { get; set; }
-    public string TaskName { get; set; }
-    public string TaskStatus { get; set; }
-    public bool IsActive { get; set; }
 
+public class TaskViewModel : INotifyPropertyChanged
+{
     public event PropertyChangedEventHandler PropertyChanged;
+
+    // Call this method whenever the employee name is modified in the UI
+    private void NotifyPropertyChanged(string propertyName)
+    {
+        PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+    }
 }
